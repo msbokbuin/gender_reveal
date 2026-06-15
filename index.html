@@ -196,7 +196,7 @@
   <div class="panel">
     <div style="text-align:center"><span class="tag">선물 추첨</span></div>
     <div class="candy">🍭</div>
-    <p class="odds">정답을 맞춘 당신께 &nbsp;<b>5%</b>&nbsp; 확률의 츄파춥스 행운을!<br><span style="font-size:.82rem;color:var(--muted)">기회는 단 한 번뿐이에요.</span></p>
+    <p class="odds">정답을 맞춘 당신께 &nbsp;<b>10%</b>&nbsp; 확률의 츄파춥스 행운을!<br><span style="font-size:.82rem;color:var(--muted)">기회는 단 한 번뿐이에요.</span></p>
 
     <button class="draw-btn" id="drawBtn">사탕 뽑기 🍬</button>
 
@@ -263,20 +263,20 @@
     setTimeout(()=>lottery.scrollIntoView({behavior:'smooth',block:'start'}),3200); // 잠시 감상 후 추첨으로
   });
 
-  /* lottery 1% */
+  /* lottery 5% */
   const drawBtn=document.getElementById('drawBtn');
   const prize=document.getElementById('prize');
   drawBtn.addEventListener('click',()=>{
     drawBtn.disabled=true;
     drawBtn.textContent='뽑는 중…';
     setTimeout(()=>{
-      const win=Math.random()<0.05;   // 5% 확률 · 단 한 번의 기회
+      const win=Math.random()<0.05;   // 10% 확률 · 단 한 번의 기회
       drawBtn.textContent='뽑기 완료';   // 재시도 없이 비활성 유지
       if(win){
         prize.className='prize jackpot fade-in';
         prize.innerHTML=
           '<div class="headline">🎉 당첨! 🍭</div>'+
-          '<p>5% 확률을 뚫은 진짜 행운의 주인공이에요!</p>'+
+          '<p>10% 확률을 뚫은 진짜 행운의 주인공이에요!</p>'+
           '<div class="capture">📸 이 화면을 캡쳐해서 보내주시면<br>츄파춥스 사탕을 선물로 보내드릴게요!</div>';
         burst();burst();
       }else{
