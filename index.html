@@ -245,7 +245,7 @@
   btnBoy.addEventListener('click',()=>{
     btnBoy.classList.add('picked');
     quizResult.className='result miss fade-in';
-    quizResult.innerHTML='<div class="big">음… 다시 한 번 보름달을 보세요 🌙</div><p>마음을 모아 한 번 더 골라보실까요?</p>';
+    quizResult.innerHTML='<div class="big">음… 다시 한 번 보름달을 보세요 🌙</div><p>마음을 모아 한 번 더 골라볼까요?</p>';
     btnBoy.classList.remove('picked');
   });
 
@@ -259,7 +259,8 @@
     quizResult.innerHTML='<div class="big">정답이에요! 보름이는 딸이랍니다 👧💗</div><p>축하해요! 이제 행운의 사탕을 뽑을 차례예요.</p>';
     burst();
     lottery.classList.add('show');
-    setTimeout(()=>lottery.scrollIntoView({behavior:'smooth',block:'start'}),700);
+    window.scrollTo({top:0,behavior:'smooth'});   // 맨 위로 올라가 달이 차오르는 모습 감상
+    setTimeout(()=>lottery.scrollIntoView({behavior:'smooth',block:'start'}),3200); // 잠시 감상 후 추첨으로
   });
 
   /* lottery 1% */
